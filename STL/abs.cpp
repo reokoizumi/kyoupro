@@ -5,9 +5,10 @@ using namespace std;
 using ll = long long;
 using P = pair<int, int>;
 const int INF = 1e+8;
-double PI = 3.141592653589793238;
 
 int main() {
-  
+  double a, b;
+  cin >> a >> b;
+  printf("%.12lf\n", abs(a-b));
   return 0;
 }

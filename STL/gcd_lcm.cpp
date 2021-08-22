@@ -8,6 +8,8 @@ const int INF = 1e+8;
 double PI = 3.141592653589793238;
 
 int main() {
-  
+  int a, b;
+  cin >> a >> b;
+  cout << __gcd(a, b) << " " << a/__gcd(a, b)*b << endl;
   return 0;
 }
