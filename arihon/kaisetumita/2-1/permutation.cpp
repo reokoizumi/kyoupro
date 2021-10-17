@@ -12,6 +12,7 @@ int m;
 vector<bool> used(101);
 vector<int> perm(101);
 
+
 void permutation1(int pos, int n) {
   if (pos == n) {
     
