@@ -24,7 +24,8 @@ int main() {
         left = false;
         break;
       }
-    } 
+    }
+    cout << "test" << endl;
     if (left) {
       s.push_back(s[a++]);
     } else {
@@ -33,3 +34,8 @@ int main() {
   }
   return 0;
 }
+
+
+/*
+6 ACDBCB
+*/
