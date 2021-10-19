@@ -25,13 +25,13 @@ int main() {
         break;
       }
     }
-    cout << "test" << endl;
     if (left) {
-      s.push_back(s[a++]);
+      cout << s[a++];
     } else {
-      s.pop_back();
+      cout << s[b--];
     }
   }
+  cout << endl;
   return 0;
 }
 
