@@ -24,6 +24,7 @@ int rec(int i, int j) {
   } else {
     res = max(rec(i + 1, j), rec(i + 1, j - w[i]) + v[i]);
   }
+  dp[i][j] = res;
   return dp[i][j];
 }
 
