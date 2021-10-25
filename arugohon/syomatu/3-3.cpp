@@ -13,13 +13,20 @@ int main() {
   vector<int> a(n);
   rep(i, n) cin >> a[i];
 
-  int min1 = INF;
-  int min2 = INF;
+  int worst_value = INF;
+  int second_value = INF;
   for (int i = 0; i < n; i++) {
-    min1 = min(min1, a[i]);
-    min2 = min(max(min1, min2), a[i]);
+    if (a[i] < worst_value) {
+      second_value = worst_value;
+      worst_value = a[i];
+    }
+    else if (a[i] < second_value) {
+      second_value = a[i];
+    }
   }
-  cout << min2 << endl;
+
+  cout << second_value << endl;
+
 
 
   return 0;
