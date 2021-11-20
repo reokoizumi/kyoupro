@@ -9,34 +9,47 @@ using P = pair<int, int>;
 const int INF = 1e+8;
 double PI = 3.141592653589793238;
 
-const vector<int> value = {500, 100, 50, 10, 5, 1};
-
-
 int main() {
-  int X;
-  vector<int> a(6);
-  cin >> X;
-  rep(i, 6) cin >> a[i];
+  int n;
+  cin >> n;
+  vector<ll> a(n), b(n);
+  rep(i, n) cin >> a[i] >> b[i];
 
-  int result = 0;
-  for (int i = 0; i < 6; i++) {
-    int add = X / value[i];
-
-    if (add > a[i]) {
-      add = a[i];
+  ll sum = 0;
+  for (int i = n - 1; i >= 0; i--) {
+    a[i] += sum;
+    ll amari = a[i] % b[i];
+    ll d = 0;
+    if (amari != 0) {
+      d = b[i] - amari;
     }
-
-    X -= value[i] * add;
-    result += add;
+    sum += d;
   }
+  cout << sum << endl;
 
-  cout << result << endl;
-  
   return 0;
 }
 
+
+
 /*
 
+3
+3 5
+2 7
+9 4
 
+ans 7
+
+7
+3 1
+4 1
+5 9
+2 6
+5 3
+5 8
+9 7
+
+ans 22
 
 */
