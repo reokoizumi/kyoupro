@@ -6,10 +6,13 @@ template<class T> void chmax(T& a, T b) { if (a < b) a = b;}
 template<class T> void chmin(T& a, T b) { if (a > b) a = b;}
 using ll = long long;
 using P = pair<int, int>;
-using Graph = vector<vector<int>>;
 const int INF = 1e+8;
 double PI = 3.141592653589793238;
 
 int main() {
+  int n, k;
+  cin >> n >> k;
+  vector<int> x(n);
+  rep(i, n) cin >> x[i];
   
 }
