@@ -20,7 +20,6 @@ int main() {
   rep(i, N) cin >> h[i];
 
   vector<ll> dp(N + 1, INF);
-  rep(i, N + 1) dp[i] = INF;
 
   dp[0] = 0;
 

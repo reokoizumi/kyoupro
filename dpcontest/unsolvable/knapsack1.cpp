@@ -13,28 +13,20 @@ double PI = 3.141592653589793238;
 
 int main() {
   int N;
-  cin >> N;
-  vector<vector<ll>> a(N + 1, vector<ll>(3));
-  rep(i, N){
-    rep(j, 3) {
-      cin >> a[i][j];
-    }
-  }
-
-  vector<vector<ll>> dp(N + 1, vector<ll>(3));
+  ll W;
+  cin >> N >> W;
+  vector<ll> w(110);
+  vector<ll> v(110);
+  rep(i, N) cin >> w[i] >> v[i];
+  vector<vector<ll>> dp(110, vector<ll>(W + 1));
 
   for (int i = 0; i < N; i++) {
-    for (int j = 0; j < 3; j++) {
-      for (int k = 0; k < 3; k++) {
-        if (j == k) continue;
-        dp[i + 1][k] = max(dp[i + 1][k], dp[i][j] + a[i][k]);
+    for (int sum_w = 0; sum_w <= W; sum_w++) {
+      if (sum_w - w[i] >= 0) {
+        dp[i + 1][sum_w] = max(dp[i + 1][sum_w], dp[i][sum_w - w[i]] + v[i]);
       }
+      dp[i + 1][sum_w] = max(dp[i + 1][sum_w], dp[i][sum_w]);
     }
   }
-  ll res = 0;
-  for (int i = 0; i < 3; i++) {
-    res = max(res, dp[N][i]);
-  }
-  cout << res << endl;
-
+  cout << dp[N][W] << endl;
 }
