@@ -12,20 +12,26 @@ const long long INF = 1LL << 60;
 double PI = 3.141592653589793238;
 
 int main() {
-  int n;
-  cin >> n;
-  vector<int> a(n);
-  rep(i, n) cin >> a[i];
-  int ans = 0;
+  int X, Y;
+  cin >> X >> Y;
 
-  sort(a.begin(), a.end());
-  for (int i = 0; i < n; i++) {
-    if (i % 2 == 0) {
-      ans += a[i];
-    } else {
-      ans -= a[i];
+  int x = -1;
+  int y = -1;
+  int z = -1;
+  
+  for (int i = 0; i <= X; i++) {
+    for (int j = 0; j <= X - i; j++) {
+      int k = X - i - j;
+      if (Y - i * 10000 - j * 5000 - k * 1000 == 0) {
+        x = i;
+        y = j;
+        z = k;
+        break;
+      }
     }
   }
-  cout << abs(ans) << endl;
+  cout << x << " " << y << " " << z << endl;
+  
+
 
 }
